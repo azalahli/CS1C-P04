@@ -32,17 +32,22 @@ public class Jukebox {
                 String[] tokens = temp.split(",");
                 for(int i = 0; i < allSongs.length; i++){
                     if(allSongs[i].getTitle().equals(tokens[1])){
+                        //System.out.println(tokens[1]);
                         if(tokens[0].equals("favorites")){
                             favoritePL.enqueue(allSongs[i]);
+                            break;
                         }
                         if(tokens[0].equals("road trip")){
                             roadTripPL.enqueue(allSongs[i]);
+                            break;
                         }
                         if(tokens[0].equals("lounge")){
                             loungePL.enqueue(allSongs[i]);
+                            break;
                         }
                 }
                 }
+
             }
             input.close();
         }

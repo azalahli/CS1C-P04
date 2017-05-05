@@ -17,6 +17,7 @@ public class Queue<E> implements Iterable<E> {
         E data;
 
         Node(E input){
+            next = null;
             data = input;
         }
     }
@@ -25,7 +26,7 @@ public class Queue<E> implements Iterable<E> {
      * private QueueIterator, which iterates through the Queue
      */
     private class QueueIterator implements Iterator<E>{
-        protected Node currentTop = top;
+        protected Node currentTop = bot;
 
         /**
          * hasNext method, as iterator should continue until the stack is empty, only a null pointer would return false
@@ -58,11 +59,11 @@ public class Queue<E> implements Iterable<E> {
      */
     private String name;
     /**
-     * node on the top of the queue
+     * node on the top(front) of the queue
      */
     private Node top;
     /**
-     * node on the bottom of the queue
+     * node on the bottom(back) of the queue
      */
     private Node bot;
     /**
@@ -100,9 +101,15 @@ public class Queue<E> implements Iterable<E> {
             return;
         }
 
-        Node newBot = new Node(input);
-        newBot.next = bot;
-        bot = newBot;
+        Node secondBot = bot;
+        bot = new Node(input);
+        bot.next = null;
+        if(isEmpty()){
+            top = bot;
+        }
+        else{
+            secondBot.next = bot;
+        }
         size++;
     }
 
@@ -154,7 +161,7 @@ public class Queue<E> implements Iterable<E> {
      * @return one string for the entire stack
      */
     public String toString(){
-        String output = name +": \n [";
+        String output = name +": \n[\n";
         for( Node i = top; i != null; i = i.next){
             output += i.data + "\n";
         }

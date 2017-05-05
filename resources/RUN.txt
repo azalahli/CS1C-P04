@@ -1,0 +1,46 @@
+"C:\Program Files\Java\jdk1.8.0_111\bin\java" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.1.1\lib\idea_rt.jar=59170:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2017.1.1\bin" -Dfile.encoding=UTF-8 -classpath "C:\Program Files\Java\jdk1.8.0_111\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\deploy.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\access-bridge-64.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\cldrdata.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\dnsns.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\jaccess.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\jfxrt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\localedata.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\nashorn.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\sunec.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\sunjce_provider.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\sunmscapi.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\sunpkcs11.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext\zipfs.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\javaws.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfxswt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\management-agent.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\plugin.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\rt.jar;C:\Users\Mober6\Desktop\GITHUBSTUFFITHINK\azalahli-project04\out;C:\Users\Mober6\Desktop\GITHUBSTUFFITHINK\azalahli-project04\lib\json-simple-1.1.1.jar" queues.MyTunes
+Welcome! We have over 59600 in FoothillTunes store! 
+Total number of songs in playlists: 15
+
+Songs in each playlist:
+
+favorites: 
+[
+Shadows - Original, 0:0:25, Blue Oyster Cult, classic pop and rock
+Take Me Away, 0:4:32, Blue Oyster Cult, classic pop and rock
+Stoned, 0:11:47, Dido, classic pop and rock
+We Belong, 0:3:43, Pat Benatar, classic pop and rock
+Stairway To The Stars, 0:3:46, Blue Oyster Cult, classic pop and rock
+]
+
+favorites: 
+[
+Shadows - Original, 0:0:25, Blue Oyster Cult, classic pop and rock
+Take Me Away, 0:4:32, Blue Oyster Cult, classic pop and rock
+Stoned, 0:11:47, Dido, classic pop and rock
+We Belong, 0:3:43, Pat Benatar, classic pop and rock
+Stairway To The Stars, 0:3:46, Blue Oyster Cult, classic pop and rock
+]
+
+favorites: 
+[
+Shadows - Original, 0:0:25, Blue Oyster Cult, classic pop and rock
+Take Me Away, 0:4:32, Blue Oyster Cult, classic pop and rock
+Stoned, 0:11:47, Dido, classic pop and rock
+We Belong, 0:3:43, Pat Benatar, classic pop and rock
+Stairway To The Stars, 0:3:46, Blue Oyster Cult, classic pop and rock
+]
+
+Enter your the number of songs you would like to play:
+7
+
+Exception in thread "main" java.lang.NullPointerException
+Playing 7 number of songs...
+	at queues.MyTunes.main(MyTunes.java:183)
+Playing song title "Shadows - Original"
+Playing song title "Take Me Away"
+Playing song title "Stoned"
+Playing song title "We Belong"
+Playing song title "Stairway To The Stars"
+
+Process finished with exit code 1
