@@ -4,13 +4,13 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Implementation of an abstact StackList data structure
+ * Implementation of an abstact Queue data structure
  * @author Myron Pow 4/29/17
  */
 
-public class StackList<E> implements Iterable<E> {
+public class Queue<E> implements Iterable<E> {
     /**
-     *private Node class for implementation of abstract StackList
+     *private Node class for implementation of abstract Queue
      */
     private class Node{
         Node next;
@@ -22,14 +22,14 @@ public class StackList<E> implements Iterable<E> {
     }
 
     /**
-     * private StackListIterator, which iterates through the stack
+     * private QueueIterator, which iterates through the Queue
      */
-    private class StackListIterator implements Iterator<E>{
+    private class QueueIterator implements Iterator<E>{
         protected Node currentTop = top;
 
         /**
          * hasNext method, as iterator should continue until the stack is empty, only a null pointer would return false
-         * @return boolean value of null stack check
+         * @return boolean value of null Queue check
          */
         public boolean hasNext(){
             return (currentTop != null);
@@ -51,42 +51,58 @@ public class StackList<E> implements Iterable<E> {
     }
 
     /*
-     * Beginning of StackList
+     * Beginning of Queue
      */
     /**
-     * name of stacklist
+     * name of Queue
      */
     private String name;
     /**
-     * node on the top of the stack
+     * node on the top of the queue
      */
     private Node top;
     /**
-     * size of the stack
+     * node on the bottom of the queue
+     */
+    private Node bot;
+    /**
+     * size of the queue
      */
     private int size;
 
     /**
-     * Constructor that sets default values of empty stacklist
+     * Constructor for queue
+     * @param newName, for the name of the queue
      */
-    StackList(){
-        name = "";
+    Queue(String newName){
+        name = newName;
         top = null;
+        bot = null;
         size = 0;
     }
 
     /**
-     * generic push, takes data of type E and puts it on top of stack
-     * @param input data to be added to top of stack
+     * Constructor that sets default values of empty queue
      */
-    public void push(E input){
+    Queue(){
+        name = "";
+        top = null;
+        bot = null;
+        size = 0;
+    }
+
+    /**
+     * generic push, takes data of type E and puts it on top of queue
+     * @param input data to be added to top of queue
+     */
+    public void enqueue(E input){
         if(input == null){
             return;
         }
 
-        Node newTop = new Node(input);
-        newTop.next = top;
-        top = newTop;
+        Node newBot = new Node(input);
+        newBot.next = bot;
+        bot = newBot;
         size++;
     }
 
@@ -94,14 +110,15 @@ public class StackList<E> implements Iterable<E> {
      * generic pop, takes node from top of stack
      * @return node from top of stack
      */
-    public Node pop(){
+    public Node dequeue(){
         if(isEmpty()){
             return null;
         }
-        Node popTop = top;
+        Node dequeueTop = top;
         top = top.next;
+        dequeueTop.next = null;
         size--;
-        return popTop;
+        return dequeueTop;
 
     }
 
@@ -150,7 +167,7 @@ public class StackList<E> implements Iterable<E> {
      * @return stack action(s)
      */
     public Iterator<E> iterator(){
-        return new StackListIterator();
+        return new QueueIterator();
     }
 
     /**
@@ -158,7 +175,7 @@ public class StackList<E> implements Iterable<E> {
      */
     public void clear(){
         for(Node i = top; i != null; i = i.next){
-            this.pop();
+            this.dequeue();
         }
     }
 
