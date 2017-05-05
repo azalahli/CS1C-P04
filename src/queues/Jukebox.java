@@ -1,4 +1,6 @@
 package queues;
+import java.io.*;
+import java.util.Scanner;
 
 import cs1c.*;
 
@@ -20,95 +22,45 @@ public class Jukebox {
      */
     Queue<SongEntry> loungePL = new Queue<SongEntry>("lounge");
 
-
-
-    /**
-     * Default constructor for a navigator object
-     * Uses literals for the two stack names
-     */
-    Jukebox(){
-        currentLink = "";
-        backLinks = new Queue<String>();
-        forwardLinks = new Queue<String>();
-        backLinks.setName("BackLinks");
-        forwardLinks.setName("ForwardLinks");
-    }
-
-    /**
-     * Adds a string into the stack, and clears forward history
-     * @param current the link to be added
-     */
-    public void setCurrentLink(String current){
-        String tempLink = this.currentLink;
-        this.currentLink = current;
-        backLinks.push(tempLink);
-        forwardLinks.clear();
-    }
-
-    /**
-     * Moves back into broswer history, and adds it to forward stack
-     */
-    public void goBack(){
-        if(backLinks.isEmpty()){
-            System.out.println("WARNING: BACK LINK NOT FOUND");
+    public void fillPlaylists(String requestFile, SongEntry[] allSongs){
+        File parse = new File(requestFile);
+        try{
+            Scanner input = new Scanner(parse);
+            String temp;
+            while(input.hasNextLine()){
+                temp = input.nextLine();
+                String[] tokens = temp.split(",");
+                for(int i = 0; i < allSongs.length; i++){
+                    if(allSongs[i].getTitle().equals(tokens[1])){
+                        if(tokens[0].equals("favorites")){
+                            favoritePL.enqueue(allSongs[i]);
+                        }
+                        if(tokens[0].equals("road trip")){
+                            roadTripPL.enqueue(allSongs[i]);
+                        }
+                        if(tokens[0].equals("lounge")){
+                            loungePL.enqueue(allSongs[i]);
+                        }
+                }
+                }
+            }
+            input.close();
         }
-        if(!backLinks.isEmpty()){
-            if(backLinks.size() == 1){
-                lastString = currentLink;
-            }
-            forwardLinks.push(currentLink);
-            this.currentLink = this.backLinks.peek();
-            backLinks.pop();
-            if(backLinks.size() <= 0){
-                currentLink = lastString;
-            }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
         }
     }
 
-    /**
-     * Moves forward into history, and adds it to the backwards stack
-     */
-    public void goForward(){
-        if(forwardLinks.isEmpty()){
-            System.out.println("WARNING: FORWARD LINK NOT FOUND");
-        }
-        if(!forwardLinks.isEmpty()){
-            if(forwardLinks.size() == 1){
-                lastString = currentLink;
-            }
-            backLinks.push(currentLink);
-            this.currentLink = this.forwardLinks.peek();
-            forwardLinks.pop();
-            }
-        if(forwardLinks.size() <= 0){
-            currentLink = lastString;
-        }
+    public Queue<SongEntry> getFavoritePL(){
+        return favoritePL;
+}
+
+    public Queue<SongEntry> getRoadTripPL(){
+        return favoritePL;
     }
 
-
-    /**
-     * accessor method for the current link
-     * @return the link that is currently being manipulated
-     */
-    public String getCurrentLink(){
-        return currentLink;
+    public Queue<SongEntry> getLoungePL(){
+        return favoritePL;
     }
-
-    /**
-     * accessor method for the backwards stackList
-     * @return the backwards stacklist
-     */
-    public Queue<String> getBackLinks(){
-        return backLinks;
-    }
-
-    /**
-     * accessor method for the forwards stackList
-     * @return
-     */
-    public Queue<String> getForwardLinks(){
-        return forwardLinks;
-    }
-
 
 }

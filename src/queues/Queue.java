@@ -110,7 +110,7 @@ public class Queue<E> implements Iterable<E> {
      * generic pop, takes node from top of stack
      * @return node from top of stack
      */
-    public Node dequeue(){
+    public E dequeue(){
         if(isEmpty()){
             return null;
         }
@@ -118,7 +118,7 @@ public class Queue<E> implements Iterable<E> {
         top = top.next;
         dequeueTop.next = null;
         size--;
-        return dequeueTop;
+        return dequeueTop.data;
 
     }
 
@@ -154,9 +154,9 @@ public class Queue<E> implements Iterable<E> {
      * @return one string for the entire stack
      */
     public String toString(){
-        String output = name +" contains " + size + " links [";
+        String output = name +": \n [";
         for( Node i = top; i != null; i = i.next){
-            output += i.data + " ";
+            output += i.data + "\n";
         }
         output += "]";
         return output;
@@ -185,6 +185,14 @@ public class Queue<E> implements Iterable<E> {
      */
     public void setName(String input){
         name = input;
+    }
+
+    /**
+     * accessor for name field
+     * @return the name of the queue
+     */
+    public String getName(){
+        return name;
     }
 
 }
