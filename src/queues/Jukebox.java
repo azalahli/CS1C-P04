@@ -1,36 +1,35 @@
 package queues;
 
+import cs1c.*;
+
 /**
  * Simulation of Browser navigation, implemented as a stackList
  *@author Myron Pow 4/29/17
  */
-public class Navigator {
-    /**
-     * current link of the stack
-     */
-    String currentLink;
+public class Jukebox {
     /**
      * stack containing all links in history
      */
-    StackList<String> backLinks;
+    Queue<SongEntry> favoritePL = new Queue<SongEntry>("favorites");
     /**
      * stack containing links that back has been used on
      */
-    StackList<String> forwardLinks;
-
+    Queue<SongEntry> roadTripPL = new Queue<SongEntry>("road trip");
     /**
-     * String used to store and set after all things are popped from a stack
+     * stack containing links that back has been used on
      */
-    String lastString ="";
+    Queue<SongEntry> loungePL = new Queue<SongEntry>("lounge");
+
+
 
     /**
      * Default constructor for a navigator object
      * Uses literals for the two stack names
      */
-    Navigator(){
+    Jukebox(){
         currentLink = "";
-        backLinks = new StackList<String>();
-        forwardLinks = new StackList<String>();
+        backLinks = new Queue<String>();
+        forwardLinks = new Queue<String>();
         backLinks.setName("BackLinks");
         forwardLinks.setName("ForwardLinks");
     }
@@ -99,7 +98,7 @@ public class Navigator {
      * accessor method for the backwards stackList
      * @return the backwards stacklist
      */
-    public StackList<String> getBackLinks(){
+    public Queue<String> getBackLinks(){
         return backLinks;
     }
 
@@ -107,7 +106,7 @@ public class Navigator {
      * accessor method for the forwards stackList
      * @return
      */
-    public StackList<String> getForwardLinks(){
+    public Queue<String> getForwardLinks(){
         return forwardLinks;
     }
 
