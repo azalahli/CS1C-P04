@@ -1,14 +1,18 @@
 @author Myron Pow
 project folder:
-azalahli-project03/
+azalahli-project04/
 
-Description:
+Description: The least late assignment thus far, and hopefully the last.
 
-src/stacks/Navigator.java
-	Class that implements a browser navigator simulator
-src/stacks/StackList.java
-	Class that implements stacks as a singly linked list of nodes
+src/stacks/Navigator.java ->
+	src/queues/Jukebox.Java
+		Class that implements a jukebox playlist
+
+src/stacks/StackList.java ->
+	src/queues/Queue.java
+	Class that implements queues as a singly linked list of nodes
+
 resources/RUN.txt
-	console output of BrowserNavigation.java
+	console output of MyTunes.java
 README.txt
 	description of files submitted
