@@ -39,7 +39,7 @@ public class MyTunes
 	/**
 	 * Creates an object of type Jukebox to read the input file used to fill the 
 	 * three Queue objects with SongEntry items.
-	 * @param filename	The name of the test file to read from.
+	 * @param requestFile	The name of the test file to read from.
 	 * @param allSongs	The array of songs read from the JSON file.
 	 */
 	public MyTunes(String requestFile, SongEntry[] allSongs)
