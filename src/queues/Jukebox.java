@@ -5,23 +5,28 @@ import java.util.Scanner;
 import cs1c.*;
 
 /**
- * Simulation of Browser navigation, implemented as a stackList
- *@author Myron Pow 4/29/17
+ * Simulation of a Jukebox, implemented as a Queue
+ *@author Myron Pow 5/3/17
  */
 public class Jukebox {
     /**
-     * stack containing all links in history
+     * Queue containing favorite music
      */
     Queue<SongEntry> favoritePL = new Queue<SongEntry>("favorites");
     /**
-     * stack containing links that back has been used on
+     * Queue containing music for road trips
      */
     Queue<SongEntry> roadTripPL = new Queue<SongEntry>("road trip");
     /**
-     * stack containing links that back has been used on
+     * Queue containing music for lounging
      */
     Queue<SongEntry> loungePL = new Queue<SongEntry>("lounge");
 
+    /**
+     * Populates play list queues
+     * @param requestFile file to be read, contains key value pairs separated by commas
+     * @param allSongs  set of songs to input into song queues
+     */
     public void fillPlaylists(String requestFile, SongEntry[] allSongs){
         File parse = new File(requestFile);
         try{
@@ -56,16 +61,29 @@ public class Jukebox {
         }
     }
 
+    /**
+     * Accessor method for favorite playlist
+     * @return queue of favorite songs
+     */
+
     public Queue<SongEntry> getFavoritePL(){
         return favoritePL;
 }
 
+    /**
+     * Accessor method for road trip playlist
+     * @return queue of songs for road trips
+     */
     public Queue<SongEntry> getRoadTripPL(){
-        return favoritePL;
+        return roadTripPL;
     }
 
+    /**
+     * Accessor method for lounge playlist
+     * @return queue of songs for lounging
+     */
     public Queue<SongEntry> getLoungePL(){
-        return favoritePL;
+        return loungePL;
     }
 
 }

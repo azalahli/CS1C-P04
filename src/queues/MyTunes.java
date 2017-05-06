@@ -120,7 +120,7 @@ public class MyTunes
 
 		// TODO:  Provide additional test input cases. That means your own tunes_CASE.txt input test file.
 		//        Clarify the purpose of each test case in your README.txt file.
-		//final String TESTFILE = "resources/tunes_??.txt;
+		//final String TESTFILE = "resources/tunes_spelling.txt";
 
 		// parses the JSON input file
 		MillionSongDataSubset msd = new MillionSongDataSubset(DATAFILE);

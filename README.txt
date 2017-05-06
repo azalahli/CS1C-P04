@@ -14,5 +14,7 @@ src/stacks/StackList.java ->
 
 resources/RUN.txt
 	console output of MyTunes.java
+resources/tunes_spelling.txt
+	Test case of a misspelled command + dequeuing with only some playlists filled
 README.txt
 	description of files submitted
