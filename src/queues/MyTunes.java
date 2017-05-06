@@ -14,7 +14,7 @@ import java.util.Scanner;
  * Enqueues and dequeues SongEntry objects from each playlist. 
  * Simulates playing each song and finally checks the state of each playlist.
  *  
- * @author Foothill College, Myron Pow
+ * @author Foothill College, Myron Pow 5/4/2016
  */
 public class MyTunes 
 {

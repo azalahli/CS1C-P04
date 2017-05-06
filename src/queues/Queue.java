@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * Implementation of an abstact Queue data structure
+ * Implementation of a partially abstact Queue data structure
  * @author Myron Pow 5/3/17
  */
 

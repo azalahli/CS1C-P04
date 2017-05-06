@@ -5,7 +5,7 @@ import java.util.Scanner;
 import cs1c.*;
 
 /**
- * Simulation of a Jukebox, implemented as a Queue
+ * Simulation of a Jukebox, implemented as a partially abstract Queue
  *@author Myron Pow 5/3/17
  */
 public class Jukebox {
