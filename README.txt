@@ -2,7 +2,7 @@
 project folder:
 azalahli-project04/
 
-Description: The least late assignment thus far, and hopefully the last.
+Description: The soon-to-be least late assignment thus far, and hopefully the last.
 
 src/stacks/Navigator.java ->
 	src/queues/Jukebox.Java
